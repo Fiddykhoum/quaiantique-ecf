@@ -1,5 +1,5 @@
 <?php
-
+//require ('lib/pdo.php');
 //converti les text en array séparé par sauts de lignes PHP_EOL
 function linesToArray(string $string) {
     return explode(PHP_EOL, $string);
@@ -24,9 +24,5 @@ function getLevel() {
     //echo 'user non connecté';
     //return '';
   }
-  // function delete(string $cardId) {
-  //  //query permettant de supprimer une carte de la base de donnée
-  //   //echo $cardId;
-  //   //$queryDelete = "DELETE FROM `utilisateur` WHERE `id` = " . $cardId . ";";
-  // }
+
 }
