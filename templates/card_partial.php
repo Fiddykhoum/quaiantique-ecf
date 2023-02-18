@@ -17,7 +17,7 @@ require_once "./lib/tools.php"
         if ($level == 1) {     
                
           if(isset($_POST[$card['id']])) {
-            $pdo = new PDO('mysql:dbname=studi_live_cuisinea;host=127.0.0.1;charset=utf8mb4', 'root', '');
+            //$pdo = new PDO('mysql:dbname=studi_live_cuisinea;host=127.0.0.1;charset=utf8mb4', 'root', '');
 
             $delquery = " DELETE FROM recipes WHERE recipes.id = " . $card['id'] .";";
             echo "cette carte a été supprimée de la base de données, Vous pouvez actualiser";
@@ -30,4 +30,4 @@ require_once "./lib/tools.php"
         <?php } ?>
       </div>
   </div>
-  </div> 
+</div> 

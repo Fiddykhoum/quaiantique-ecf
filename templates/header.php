@@ -1,7 +1,7 @@
 <?php
   //session_start();
   require_once('lib/config.php');
-  require_once('lib/pdo.php');
+  //require_once('lib/pdo.php');
   require_once('lib/tools.php');
 
   $currentPage = basename($_SERVER['SCRIPT_NAME']);
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/override-bootstrap.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- <script src="assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script> -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
 </head>
 

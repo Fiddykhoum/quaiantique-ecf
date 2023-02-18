@@ -4,6 +4,9 @@ body, header {
 .content {
   background-color: hsla(50, 33%, 25%, .75);
 }
+.role {
+  width: 200px;
+}
 
 
 /* ______________login_________________ */
@@ -90,4 +93,9 @@ p.errorMessage {
     padding: 5px 10px;
     color: #FFFFFF;
     border-radius: 3px;
+}
+
+.btnleft {
+  margin-left: 15px;
+  width: 80px;
 }

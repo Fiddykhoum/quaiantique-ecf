@@ -43,3 +43,16 @@ function saveCard(PDO $pdo, int $category, string $title, string $description, s
     $query->bindParam(':image', $image, PDO::PARAM_STR);
     return $query->execute();
 }
+//-------------------------------------------------------------------
+
+function changeRole(PDO $pdo, int $role_id, string $username) {
+  echo $role_id;
+  echo $username;
+  $sql = "UPDATE `users` SET `role_id` = :role_id WHERE `username` = :username" ;
+  $query = $pdo->prepare($sql);
+  $query->bindParam(':role_id', $role_id, PDO::PARAM_INT);
+  $query->bindParam(':username', $username, PDO::PARAM_STR);
+  return $query->execute();
+}
+
+//----------------------------------------------

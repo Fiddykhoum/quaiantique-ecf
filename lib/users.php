@@ -21,10 +21,4 @@ function getUserPassword(PDO $pdo, string $password) {
     return $query->fetch();
 }
 
-// ne fonctionne pas
-// function getSlug(PDO $pdo, string $slug) {
-//   $query = $pdo->prepare("SELECT * FROM users JOIN roles ON users.role_id = roles.id WHERE username = :username;");
-//   $query->bindParam(':username', $slug, PDO::PARAM_INT);
-//   $query->execute();
-//   $query->fetch();
-// }
+

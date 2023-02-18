@@ -5,26 +5,24 @@ require_once('lib/card.php');
 
 if (isset($_POST['saveCard'])) {
     $res = saveCard($pdo, $_POST['category'], $_POST['title'], $_POST['description'], $_POST['ingredients'], $_POST['instructions'], null);
+    var_dump($res);
 }
 
-if (isset($_POST['changeRole'])) {
-  $res = changeRole($pdo, (int)$_POST['role_id'], (string)$_POST['username']);
-  var_dump($res);
-}
 
 $level = getLevel();
+echo $level;
 
 if ($level == 1) { ?>
 
-<form method="POST" enctype="multipart/form-data">
+<form method="POST" enctype="multipart/form-rolr-data">
   <h2 class="display-4">Modifier les droits d'un utilisateur</h2>
   <div class="mb-3">
-    <label for="username" class="form-label">Identifiant</label>
-    <input type="text" name="username" id="username" class="form-control">
+    <label for="title" class="form-label">Identifiant</label>
+    <input type="text" name="id" id="id" class="form-control">
     <br>
-      <label for="role_id" class="form-label">Role</label>
+      <label for="title" class="form-label">Role</label>
     <div class="d-flex role">
-      <input type="text" name="role_id" id="role_id" class="form-control">
+      <input type="text" name="role" id="role" class="form-control">
 
     <?php
 
@@ -34,12 +32,16 @@ if ($level == 1) { ?>
     }
     ?>
 
-    <input class="btnleft box-button" type="submit" value="Modifier" name="changeRole" class="btn btn-primary">
+    <input class="btnleft box-button" type="submit" value="Modifier" name="saveCard" class="btn btn-primary">
     </div>
       <p >1 pour client - 2 pour Chef/Directeur - 3 pour administrateur</p>
     </div>
 </form>
 
+
+
+<br>
+<br>
 
 <form method="POST" enctype="multipart/form-data">
   <h2 class="display-4">Ajouter du contenu</h2>
@@ -74,8 +76,6 @@ if ($level == 1) { ?>
     <input type="submit" value="Enregistrer" name="saveCard" class="btn btn-primary">
 
 </form>
-  
-
 <?php
 } else {
   ?>
@@ -86,6 +86,8 @@ if ($level == 1) { ?>
   <?php
 }
 ?>
+
+
 
 
 <?php
