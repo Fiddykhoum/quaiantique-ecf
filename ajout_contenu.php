@@ -22,10 +22,11 @@ if (isset($_POST['saveCard'])) {
     // Si un fichier a été envoyé
     if(isset($_FILES['file']['tmp_name']) && $_FILES['file']['tmp_name'] != '') {
         // la méthode getimagessize va retourner false si le fichier n'est pas une image
-        $checkImage = getimagesize($_FILES['file']['tmp_name']);
+        $checkImage = getimagesize($_FILES['file']['tmp_name']);      
         if ($checkImage !== false) {
             // Si c'est une image on traite
             $fileName = uniqid().'-'.slugify($_FILES['file']['name']);
+            echo $fileName;
             move_uploaded_file($_FILES['file']['tmp_name'], _CARDS_IMG_PATH_.$fileName);
         } else {
             // Sinon on affiche un message d'erreur
