@@ -14,7 +14,7 @@ define('_HOME_CARDS_LIMIT_', 3);
 $mainMenu = [
   'index.php' => 'Accueil', 
   'restaurant.php' => 'Le restaurant',
-  'menu.php' => 'menu et carte',
+  'menus.php' => 'menu et carte',
   'reserver.php' => 'Réserver',    
 ];
 
