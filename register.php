@@ -1,9 +1,4 @@
-﻿<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-  </head>
-<body> -->
+﻿
 <?php
 require_once('templates/header.php');
 //require('./lib/config.php');

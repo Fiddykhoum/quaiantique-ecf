@@ -3,13 +3,13 @@
 // je l'importe pour => connection des utiisateurs, voisr si c'est la bonne chose à faire
  require_once('lib/pdo.php');
 
-//constante qui définie les images déstinées à postée en tant que photos
+//constante qui définie les images déstinées à être postée en tant que photos
 define('_CARDS_IMG_PATH_', 'uploads/cards/');
 //constante qui définie les images déstinées à l'apparence du site
 define('_ASSETS_IMG_PATH_', 'assets/images/');
 
 //constante qui défini le nombre de cards à mettre dans index.php
-define('_HOME_CARDS_LIMIT_', 6);
+define('_HOME_CARDS_LIMIT_', 3);
 
 $mainMenu = [
   'index.php' => 'Accueil', 
@@ -18,7 +18,7 @@ $mainMenu = [
   'reserver.php' => 'Réserver',    
 ];
 
-
+//for login and register
 // test config admin dossier supprimé
   // Informations d'identification
 define('DB_SERVER', '127.0.0.1');

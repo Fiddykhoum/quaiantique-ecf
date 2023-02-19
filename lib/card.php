@@ -1,7 +1,7 @@
 <?php
 
 function getCardById(PDO $pdo, int $id) {
-    $query = $pdo->prepare("SELECT * FROM recipes WHERE id = :id");
+    $query = $pdo->prepare("SELECT * FROM cards WHERE id = :id");
     $query->bindParam(':id', $id, PDO::PARAM_INT);
     $query->execute();
     return $query->fetch();
@@ -16,7 +16,7 @@ function getCardImage(string|null $image) {
 }
 
 function getCards(PDO $pdo, int $limit = null) {
-    $sql = 'SELECT * FROM recipes ORDER BY id DESC';
+    $sql = 'SELECT * FROM cards ORDER BY id DESC';
 
     if ($limit) {
         $sql .= ' LIMIT :limit';
@@ -43,7 +43,6 @@ function saveCard(PDO $pdo, int $category, string $title, string $description, s
     $query->bindParam(':image', $image, PDO::PARAM_STR);
     return $query->execute();
 }
-//-------------------------------------------------------------------
 
 function changeRole(PDO $pdo, int $role_id, string $username) {
   echo $role_id;
@@ -54,5 +53,3 @@ function changeRole(PDO $pdo, int $role_id, string $username) {
   $query->bindParam(':username', $username, PDO::PARAM_STR);
   return $query->execute();
 }
-
-//----------------------------------------------

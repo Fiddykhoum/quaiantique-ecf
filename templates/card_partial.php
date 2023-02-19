@@ -19,7 +19,7 @@ require_once "./lib/tools.php"
           if(isset($_POST[$card['id']])) {
             //$pdo = new PDO('mysql:dbname=studi_live_cuisinea;host=127.0.0.1;charset=utf8mb4', 'root', '');
 
-            $delquery = " DELETE FROM recipes WHERE recipes.id = " . $card['id'] .";";
+            $delquery = " DELETE FROM cards WHERE cards.id = " . $card['id'] .";";
             echo "cette carte a été supprimée de la base de données, Vous pouvez actualiser";
             $query = $pdo->query($delquery);
            } ?>

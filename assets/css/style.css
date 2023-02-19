@@ -1,5 +1,6 @@
 body, header {
   background-color: #392C1E;
+  font-family: Arial, Helvetica, sans-serif;
 } 
 .content {
   background-color: hsla(50, 33%, 25%, .75);
