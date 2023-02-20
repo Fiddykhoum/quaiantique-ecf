@@ -57,7 +57,7 @@ if (isset($_POST['changeRole'])) {
 
 $level = getLevel();
 
-if ($level == 1) { ?>
+if ($level == 2 || $level == 1) { ?>
 
 <!-- ajout de cntenu -->
 <form method="POST" enctype="multipart/form-data">
