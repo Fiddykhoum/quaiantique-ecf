@@ -12,10 +12,6 @@ $menu = [
 ];
 
 
-
-
-
-
 if (isset($_POST['saveMenu'])) {
     $res = saveMenu($pdo, $_POST['title'], $_POST['content'], null);
     $filePicName = null;
@@ -48,7 +44,6 @@ if (isset($_POST['saveMenu'])) {
         'content' => $_POST['content'],
     ];
 
-  //fin de test de l'upload et rename de l'image_______________________________________________
 }
 
 if (isset($_POST['changeRole'])) {

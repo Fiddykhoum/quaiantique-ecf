@@ -2,19 +2,14 @@
 require_once('templates/header.php');
 require_once('lib/tools.php');
 require_once('lib/card.php');
-require_once('lib/category.php');
 
 $errors = [];
 $messages = [];
 $card = [
     'title' => '',
     'description' => '',
-    'ingredients' => '',
-    'instructions' => '',
-    'category_id' => '',
+    'content' => '',
 ];
-
-$categories = getCategories($pdo);
 
 if (isset($_POST['saveCard'])) {
     $fileName = null;
@@ -34,7 +29,7 @@ if (isset($_POST['saveCard'])) {
     }
 
     if (!$errors) {
-        $res = saveCard($pdo, $_POST['category'], $_POST['title'], $_POST['description'], $_POST['ingredients'], $_POST['instructions'], $fileName);
+        $res = saveCard($pdo, $_POST['title'], $_POST['description'], $_POST['content'], $fileName);
         
         if ($res) {
             $messages[] = 'La carte a bien été sauvegardée';
@@ -45,9 +40,7 @@ if (isset($_POST['saveCard'])) {
     $card = [
         'title' => $_POST['title'],
         'description' => $_POST['description'],
-        'ingredients' => $_POST['ingredients'],
-        'instructions' => $_POST['instructions'],
-        'category_id' => $_POST['category'],
+        'content' => $_POST['content'],
     ];
 
 }
@@ -102,22 +95,10 @@ if ($level == 1) { ?>
         <textarea name="description" id="description" cols="30" rows="5" class="form-control"></textarea>
     </div>
     <div class="mb-3">
-        <label for="ingredients" class="form-label">Ingredients</label>
-        <textarea name="ingredients" id="ingredients" cols="30" rows="5" class="form-control"></textarea>
+        <label for="content" class="form-label">contenu</label>
+        <textarea name="content" id="content" cols="30" rows="5" class="form-control"></textarea>
     </div>
-    <div class="mb-3">
-        <label for="instructions" class="form-label">Instructions</label>
-        <textarea name="instructions" id="instructions" cols="30" rows="5" class="form-control"></textarea>
-    </div>
-    <div class="mb-3">
-        <label for="category" class="form-label">Catégorie</label>
-        <select name="category" id="category" class="form-select">
-            <option value="1">Entrée</option>
-            <option value="2">Plat</option>
-            <option value="3">Dessert</option>
-        </select>
-    </div>
-
+    
     <div class="mb-3">
           <label for="file" class="form-label">Image</label>
           <input type="file" name="file" id="file">

@@ -8,12 +8,8 @@ $id = (int)$_GET['id'];
 $card = getCardById($pdo, $id);
 
 if ($card) {
-  // linesToArray va transformer un exte en array selon un explode. 
-  // cette fonction est dans lib/tools.php
-    $ingredients = linesToArray($card['ingredients']);
-    $instructions = linesToArray($card['instructions']);
-    
-?>
+
+ ?>
 
 <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
     <div class="col-10 col-sm-8 col-lg-6">
@@ -26,21 +22,12 @@ if ($card) {
 </div>
 
 <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-    <h2>Ingrédients</h2>
+    <h2>Description</h2>
     <ul class="list-group">
-        <?php foreach ($ingredients as $key => $ingredient) { ?>
-            <li class="list-group-item"><?=$ingredient; ?></li>
+        <?php $card['description']; { ?>
+            <li class="list-group-item"><?= $card['content'] ?></li>
         <?php } ?>
     </ul>
-</div>
-
-<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-    <h2>Instructions</h2>
-    <ol class="list-group list-group-numbered">
-        <?php foreach ($instructions as $key => $instruction) { ?>
-            <li class="list-group-item"><?=$instruction; ?></li>
-        <?php } ?>
-    </ol>
 </div>
 
 <?php } else { ?>
