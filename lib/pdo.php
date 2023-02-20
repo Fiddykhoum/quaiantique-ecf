@@ -8,4 +8,3 @@ try {
 } catch (PDOException $e) {
     echo 'Impossible de se connecter à la base de données';
 }
-

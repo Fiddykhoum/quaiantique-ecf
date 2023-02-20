@@ -6,21 +6,18 @@
   $cards = getCards($pdo);
 
 ?>
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <h1>Galerie photo</h1>
+  </div>
+  <div class="row">
 
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-        <h1>Galerie photo</h1>
-    </div>
+    <?php foreach ($cards as $key => $card) {
+      include('templates/card_partial.php');
+    }
 
-    <div class="row">
-
-      <?php foreach ($cards as $key => $card) {
-        include('templates/card_partial.php');
-      }
-
-      ?>
-
-    </div>
+    ?>
+  </div>
 
 <?php
-require_once('templates/footer.php');
+  require_once('templates/footer.php');
 ?>

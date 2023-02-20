@@ -6,11 +6,9 @@
   $menus = getMenus($pdo);
 
 ?>
-
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-        <h1>Galerie photo</h1>
+        <h1>Nos menus et cartes</h1>
     </div>
-
     <div class="row">
 
       <?php foreach ($menus as $key => $menu) {

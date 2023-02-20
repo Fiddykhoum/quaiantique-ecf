@@ -17,7 +17,6 @@ $card = [
 $categories = getCategories($pdo);
 
 if (isset($_POST['saveCard'])) {
-    //$res = saveCard($pdo, $_POST['category'], $_POST['title'], $_POST['description'], $_POST['ingredients'], $_POST['instructions'], null);
     $fileName = null;
     // Si un fichier a été envoyé
     if(isset($_FILES['file']['tmp_name']) && $_FILES['file']['tmp_name'] != '') {
@@ -51,7 +50,6 @@ if (isset($_POST['saveCard'])) {
         'category_id' => $_POST['category'],
     ];
 
-  //fin de test de l'upload et rename de l'image_______________________________________________
 }
 
 if (isset($_POST['changeRole'])) {
@@ -65,7 +63,7 @@ if ($level == 1) { ?>
 
 <!-- modification role -->
 <form method="POST" enctype="multipart/form-data">
-  <h2 class="display-4">Modifier les droits d'un utilisateur</h2>
+  <h2 class="display-6">Modifier les droits d'un utilisateur</h2>
   <div class="mb-3">
     <label for="username" class="form-label">Identifiant</label>
     <input type="text" name="username" id="username" class="form-control">
@@ -82,9 +80,9 @@ if ($level == 1) { ?>
     }
     ?>
 
-    <input class="btnleft box-button" type="submit" value="Modifier" name="changeRole" class="btn btn-primary">
+    <input class="btn btn-primary btnleft" type="submit" value="Modifier" name="changeRole" class="btn btn-primary">
     </div>
-      <p >1 pour client - 2 pour Chef/Directeur - 3 pour administrateur</p>
+      <p >1 pour administrateur - 2 pour Chef/Directeur - 3 pour client</p>
     </div>
 </form>
 
@@ -92,9 +90,9 @@ if ($level == 1) { ?>
 <br>
 
 
-<!-- ajout de cntenu -->
+<!-- add content -->
 <form method="POST" enctype="multipart/form-data">
-  <h2 class="display-4">Ajouter du contenu</h2>
+  <h2 class="display-6">Ajouter du contenu</h2>
     <div class="mb-3">
         <label for="title" class="form-label">Titre</label>
         <input type="text" name="title" id="title" class="form-control">

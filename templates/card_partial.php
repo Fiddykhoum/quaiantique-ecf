@@ -2,7 +2,7 @@
 require_once "./lib/tools.php"
 ?>
 
-<div class="col-md-4">
+<div class="col-md-4 mt-4">
   <div class="card">
       <img src="<?=getCardImage($card['image']); ?>" 
         class="card-img-top" 
@@ -17,8 +17,7 @@ require_once "./lib/tools.php"
         if ($level == 1) {     
                
           if(isset($_POST[$card['id']])) {
-            //$pdo = new PDO('mysql:dbname=studi_live_cuisinea;host=127.0.0.1;charset=utf8mb4', 'root', '');
-
+            
             $delquery = " DELETE FROM cards WHERE cards.id = " . $card['id'] .";";
             $query = $pdo->query($delquery);
             header("Refresh:0");

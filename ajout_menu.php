@@ -1,7 +1,8 @@
 <?php
 require_once('templates/header.php');
-//require_once('lib/tools.php');
+require_once('lib/tools.php');
 require_once('lib/menu.php');
+
 
 $errors = [];
 $messages = [];
@@ -10,20 +11,23 @@ $menu = [
     'content' => '',
 ];
 
-//$categories = getCategories($pdo);
+
+
+
+
 
 if (isset($_POST['saveMenu'])) {
-    //$res = saveCard($pdo, $_POST['category'], $_POST['title'], $_POST['description'], $_POST['ingredients'], $_POST['instructions'], null);
-    $fileName = null;
+    $res = saveMenu($pdo, $_POST['title'], $_POST['content'], null);
+    $filePicName = null;
     // Si un fichier a été envoyé
     if(isset($_FILES['file']['tmp_name']) && $_FILES['file']['tmp_name'] != '') {
         // la méthode getimagessize va retourner false si le fichier n'est pas une image
         $checkImage = getimagesize($_FILES['file']['tmp_name']);      
         if ($checkImage !== false) {
             // Si c'est une image on traite
-            $fileName = uniqid().'-'.slugify($_FILES['file']['name']);
-            echo $fileName;
-            move_uploaded_file($_FILES['file']['tmp_name'], _CARDS_IMG_PATH_.$fileName);
+            $filePicName = uniqid().'-'.slugify($_FILES['file']['name']);
+            echo $filePicName;
+            move_uploaded_file($_FILES['file']['tmp_name'], _CARDS_IMG_PATH_.$filePicName);
         } else {
             // Sinon on affiche un message d'erreur
             $errors[] = 'Le fichier doit être une image';
@@ -31,7 +35,7 @@ if (isset($_POST['saveMenu'])) {
     }
 
     if (!$errors) {
-        $res = saveMenu($pdo, $_POST['title'], $_POST['content'], $filename);
+        $res = saveMenu($pdo, $_POST['title'], $_POST['content'], $filePicName);
         
         if ($res) {
             $messages[] = 'La carte a bien été sauvegardée';
