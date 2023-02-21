@@ -23,3 +23,10 @@ Cliquer sur le bouton "administrer" qui est apparu,
 renseigner l’identifiant dont le rôle doit être modifié, renseigner le rôle. 
 (3 pour client - 2 pour Directeur - 1 pour administrateur)
 
+
+/-------------------------------------------------------------------------------------
+
+Pour vous connecter, vous pourrez utiliser les comptes 
+admin / mdp admin comme administrateur
+directeur / mdp directeur comme directeur
+fiddy / mdp fiddy comme client
