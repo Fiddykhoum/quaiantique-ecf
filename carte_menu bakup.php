@@ -18,9 +18,18 @@ if ($menu) {
     </div>
     <div class="col-lg-6">
         <h1 class="display-5 fw-bold lh-1 mb-3"><?=$menu['title']; ?></h1>
-        <!-- <h2>Description</h2> -->
+        <h2>Description</h2>
         <p class="lead"><?=$menu['content']; ?></p>
     </div>
+</div>
+
+<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <h2>Description</h2>
+    <ul class="list-group">
+        <?php $menu['content']; { ?>
+            <li class="list-group-item"><?= $menu['content'] ?></li>
+        <?php } ?>
+    </ul>
 </div>
 
 <?php } else { ?>

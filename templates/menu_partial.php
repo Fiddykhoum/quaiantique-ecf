@@ -2,7 +2,7 @@
 require_once "./lib/tools.php"
 ?>
 
-<div class="col-md-4">
+<div class="col-md-4 mt-4">
   <div class="card">
       <img src="<?=getMenuImage($menu['image']); ?>" 
         class="card-img-top" 

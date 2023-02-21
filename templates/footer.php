@@ -13,25 +13,19 @@
 
       </div>
 
-      <div class="col mb-3">
+      <div class="col mb-3 lead">
         <h5>Section</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 lead">Politique confidentialité</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 lead">Contacts</a></li>
         </ul>
       </div>
 
-      <div class="col mb-3">
+      <div class="col mb-3 lead">
         <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+        <ul class="nav flex-column lead">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 lead">Plan du site</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 lead">Features</a></li>
         </ul>
       </div>
     </footer>
