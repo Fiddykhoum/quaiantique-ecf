@@ -24,7 +24,7 @@ if ($card) {
 <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
     <h2>Description</h2>
     <ul class="list-group">
-        <?php $card['description']; { ?>
+        <?php $card['content']; { ?>
             <li class="list-group-item"><?= $card['content'] ?></li>
         <?php } ?>
     </ul>

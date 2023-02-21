@@ -47,7 +47,6 @@ if (isset($_POST['saveCard'])) {
 
 if (isset($_POST['changeRole'])) {
   $res = changeRole($pdo, (int)$_POST['role_id'], (string)$_POST['username']);
-  var_dump($res);
 }
 
 $level = getLevel();

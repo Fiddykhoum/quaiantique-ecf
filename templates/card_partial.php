@@ -13,6 +13,7 @@ require_once "./lib/tools.php"
       <p class="card-text"><?= $card['description']; ?></p>
       <a href="carte.php?id=<?=$card['id']; ?>" class="btn btn-primary">Détails</a>
       <?php
+      
         $level = getLevel();
         if ($level == 1) {     
                

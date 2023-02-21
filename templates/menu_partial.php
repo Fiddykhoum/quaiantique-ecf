@@ -11,8 +11,10 @@ require_once "./lib/tools.php"
     <div class="card-body">
       <h5 class="card-title"><?= $menu['title']; ?></h5>
       <p class="card-text"><?= $menu['content']; ?></p>
-      <a href="carte.php?id=<?=$menu['id']; ?>" class="btn btn-primary">Détails</a>
+      <a href="carte_menu.php?id=<?=$menu['id']; ?>" class="btn btn-primary">Détails</a>
       <?php
+
+      
         $level = getLevel();
         if ($level == 1) {     
                
