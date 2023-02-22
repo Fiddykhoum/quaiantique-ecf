@@ -15,15 +15,22 @@ require_once "./lib/tools.php"
       <?php
       
         $level = getLevel();
-        if ($level == 1) {     
-               
+        if ($level == 1) {                    
           if(isset($_POST[$card['id']])) {
             
             $delquery = " DELETE FROM cards WHERE cards.id = " . $card['id'] .";";
             $query = $pdo->query($delquery);
-            //header("Refresh:0");
-            header("Refresh:0; card_patial.php");
+           
+           ?> 
+              <script language="javascript">               
+                 alert ("la carte a été supprimée")
+                 location.reload();            
+              </script>
+
+          <?php
+           
            } ?>
+
           <form method="post">
             <input type="submit"  name="<?=$card['id']; ?>" value="Supprimer"/> 
           </form>
