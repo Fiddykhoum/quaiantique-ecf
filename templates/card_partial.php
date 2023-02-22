@@ -21,7 +21,8 @@ require_once "./lib/tools.php"
             
             $delquery = " DELETE FROM cards WHERE cards.id = " . $card['id'] .";";
             $query = $pdo->query($delquery);
-            header("Refresh:0");
+            //header("Refresh:0");
+            header("Refresh:0; card_patial.php");
            } ?>
           <form method="post">
             <input type="submit"  name="<?=$card['id']; ?>" value="Supprimer"/> 

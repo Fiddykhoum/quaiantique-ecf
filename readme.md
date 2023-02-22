@@ -30,3 +30,8 @@ Pour vous connecter, vous pourrez utiliser les comptes
 admin / mdp admin comme administrateur
 directeur / mdp directeur comme directeur
 fiddy / mdp fiddy comme client
+
+
+config.php
+pdo.php 
+tools.php

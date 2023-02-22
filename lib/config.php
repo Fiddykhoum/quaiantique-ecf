@@ -11,6 +11,8 @@ define('_ASSETS_IMG_PATH_', 'assets/images/');
 //const define number of cards in index.php
 define('_HOME_CARDS_LIMIT_', 3);
 
+
+// header's nav bar
 $mainMenu = [
   'index.php' => 'Accueil', 
   'restaurant.php' => 'Le restaurant',
@@ -18,14 +20,46 @@ $mainMenu = [
   'reserver.php' => 'Réserver',    
 ];
 
-// database informations
-define('DB_SERVER', '127.0.0.1');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'studi_live_cuisinea');
+//--------------------------------------------------------------------------------------------
+// Change host's param here
+function host() {
+  $hostChange = [
+      'host' => '127.0.0.1',
+      'username' => 'root',
+      'password' => '',
+      'dbName' => 'studi_live_cuisinea',
+    ];   
+  return $hostChange;
+}
+// server LWS
+// function host() {
+//   $hostChange = [
+//       'host' => '185.98.131.160',
+//       'username' => 'fiddy2051642',
+//       'password' => 'c32ogbitxz',
+//       'dbName' => 'fiddy2051642',
+//     ];   
+//   return $hostChange;
+// }
+//--------------------------------------------------------------------------------------------
 
-// database connexion
-$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+// server params call function host()
+$host = host();
+  define('DB_SERVER', ''.$host['host'].'');
+  define('DB_USERNAME',''.$host['username'].'');
+  define('DB_PASSWORD',''. $host['password'].'');
+  define('DB_NAME',''. $host['dbName'].'');
+  
+  // database connexion
+  $conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+
+//database informations version en dure
+// define('DB_SERVER', '127.0.0.1');
+// define('DB_USERNAME', 'root');
+// define('DB_PASSWORD', '');
+// define('DB_NAME', 'studi_live_cuisinea');
+
  
 // try if connexion is ok
 if($conn === false){

@@ -4,7 +4,7 @@
   require_once('lib/tools.php');
 
   $currentPage = basename($_SERVER['SCRIPT_NAME']);
-  
+
 ?>
 
 <!DOCTYPE html>
