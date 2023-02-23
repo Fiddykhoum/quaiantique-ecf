@@ -33,7 +33,7 @@ require_once "./lib/tools.php"
 
            } ?>
           <form method="post">
-            <input type="submit"  name="<?=$menu['id']; ?>" value="Supprimer"/> 
+            <input type="submit" class="btn btn-primary mt-4" name="<?=$menu['id']; ?>" value="Supprimer"/> 
           </form>
 
         <?php } ?>
