@@ -22,7 +22,15 @@ require_once "./lib/tools.php"
             
             $delquery = " DELETE FROM menus WHERE menus.id = " . $menu['id'] .";";
             $query = $pdo->query($delquery);
-            header("Refresh:0");
+            
+            ?> 
+              <script language="javascript">               
+                alert ("la carte a été supprimée")
+                location.reload();            
+              </script>
+            <?php
+
+
            } ?>
           <form method="post">
             <input type="submit"  name="<?=$menu['id']; ?>" value="Supprimer"/> 

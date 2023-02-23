@@ -15,17 +15,16 @@ $menu = [
 if (isset($_POST['saveMenu'])) {
     $res = saveMenu($pdo, $_POST['title'], $_POST['content'], null);
     $filePicName = null;
-    // Si un fichier a été envoyé
+    // if file sended
     if(isset($_FILES['file']['tmp_name']) && $_FILES['file']['tmp_name'] != '') {
         // la méthode getimagessize va retourner false si le fichier n'est pas une image
         $checkImage = getimagesize($_FILES['file']['tmp_name']);      
         if ($checkImage !== false) {
             // Si c'est une image on traite
             $filePicName = uniqid().'-'.slugify($_FILES['file']['name']);
-            echo $filePicName;
             move_uploaded_file($_FILES['file']['tmp_name'], _CARDS_IMG_PATH_.$filePicName);
         } else {
-            // Sinon on affiche un message d'erreur
+            // if not, show error
             $errors[] = 'Le fichier doit être une image';
         }
     }

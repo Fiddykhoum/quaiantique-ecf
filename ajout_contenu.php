@@ -20,7 +20,6 @@ if (isset($_POST['saveCard'])) {
         if ($checkImage !== false) {
             // Si c'est une image on traite
             $fileName = uniqid().'-'.slugify($_FILES['file']['name']);
-            echo $fileName;
             move_uploaded_file($_FILES['file']['tmp_name'], _CARDS_IMG_PATH_.$fileName);
         } else {
             // Sinon on affiche un message d'erreur
@@ -65,11 +64,11 @@ if ($level == 1) { ?>
       <input type="text" name="role_id" id="role_id" class="form-control">
 
     <?php
-
-    if (isset ($_POST['id'] ) && ($_POST['role'] )) {
-      echo $_POST['id'];
-      echo $_POST['id'];
-    }
+    // d'ou ça vient ça????
+    // if (isset ($_POST['id'] ) && ($_POST['role'] )) {
+    //   echo $_POST['id'];
+    //   echo $_POST['id'];
+    // }
     ?>
 
     <input class="btn btn-primary btnleft" type="submit" value="Modifier" name="changeRole" class="btn btn-primary">
