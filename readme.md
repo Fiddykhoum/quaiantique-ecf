@@ -1,16 +1,17 @@
 Pour utiliser l'application en local:
 
-Modifier les fichiers
+Modifier la fonction host() dans le fichier lib/config.php
 
 lib/config.php
-  define('DB_SERVER', 'Mon_localhost');
-  define('DB_USERNAME', 'Usernam');
-  define('DB_PASSWORD', 'Password');
-  define('DB_NAME', 'Db_name');
-
-
-lib/pdo.php et lib/tools.php
-$pdo = new PDO('mysql:dbname=Db_name;host=Mon_localhost;charset=utf8mb4', 'Username', 'Password');
+  function host() {
+  $hostChange = [
+      'host' => 'my_host',
+      'username' => 'my_username',
+      'password' => 'my_pasword',
+      'dbName' => 'my_database_name',
+    ];   
+  return $hostChange;
+}
 
 Importer la base de données "fiddy2051642" jointe en local
 
