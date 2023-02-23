@@ -33,9 +33,18 @@ if (isset($_POST['saveMenu'])) {
         $res = saveMenu($pdo, $_POST['title'], $_POST['content'], $filePicName);
         
         if ($res) {
-            $messages[] = 'La carte a bien été sauvegardée';
+          ?> 
+            <script language="javascript">               
+              alert ('La carte a bien été sauvegardée')            
+            </script>
+          <?php
+        
         } else {
-            $errors[] = 'La carte n\'a pas été sauvegardée';
+          ?> 
+            <script language="javascript">               
+               alert ('La carte n\'a pas été sauvegardée')            
+            </script>
+          <?php
         }
     }
     $menu = [

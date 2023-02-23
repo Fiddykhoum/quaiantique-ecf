@@ -11,18 +11,19 @@ $card = [
     'content' => '',
 ];
 
+
 if (isset($_POST['saveCard'])) {
     $fileName = null;
     // Si un fichier a été envoyé
     if(isset($_FILES['file']['tmp_name']) && $_FILES['file']['tmp_name'] != '') {
-        // la méthode getimagessize va retourner false si le fichier n'est pas une image
+        // return false if file si not image
         $checkImage = getimagesize($_FILES['file']['tmp_name']);      
         if ($checkImage !== false) {
-            // Si c'est une image on traite
+            // if the file is an image
             $fileName = uniqid().'-'.slugify($_FILES['file']['name']);
             move_uploaded_file($_FILES['file']['tmp_name'], _CARDS_IMG_PATH_.$fileName);
         } else {
-            // Sinon on affiche un message d'erreur
+            // if not error message
             $errors[] = 'Le fichier doit être une image';
         }
     }
@@ -31,9 +32,21 @@ if (isset($_POST['saveCard'])) {
         $res = saveCard($pdo, $_POST['title'], $_POST['description'], $_POST['content'], $fileName);
         
         if ($res) {
-            $messages[] = 'La carte a bien été sauvegardée';
+          //$messages[] = 'La carte a bien été sauvegardée';
+          ?> 
+            <script language="javascript">               
+               alert ('La carte a bien été sauvegardée')
+              //  location.reload();            
+            </script>
+          <?php
         } else {
-            $errors[] = 'La carte n\'a pas été sauvegardée';
+          //$errors[] = 'La carte n\'a pas été sauvegardée';
+          ?> 
+            <script language="javascript">               
+               alert ('La carte n\'a pas été sauvegardée')
+              //  location.reload();            
+            </script>
+          <?php
         }
     }
     $card = [
