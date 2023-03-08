@@ -2,7 +2,6 @@ Pour utiliser l'application en local:
 
 Modifier la fonction host() dans le fichier lib/config.php
 
-lib/config.php
   function host() {
   $hostChange = [
       'host' => 'my_host',

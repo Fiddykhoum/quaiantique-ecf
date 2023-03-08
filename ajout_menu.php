@@ -3,7 +3,6 @@ require_once('templates/header.php');
 require_once('lib/tools.php');
 require_once('lib/menu.php');
 
-
 $errors = [];
 $messages = [];
 $menu = [
@@ -17,10 +16,10 @@ if (isset($_POST['saveMenu'])) {
     $filePicName = null;
     // if file sended
     if(isset($_FILES['file']['tmp_name']) && $_FILES['file']['tmp_name'] != '') {
-        // la méthode getimagessize va retourner false si le fichier n'est pas une image
+        // return false if file is not image
         $checkImage = getimagesize($_FILES['file']['tmp_name']);      
         if ($checkImage !== false) {
-            // Si c'est une image on traite
+            // if the file is an image
             $filePicName = uniqid().'-'.slugify($_FILES['file']['name']);
             move_uploaded_file($_FILES['file']['tmp_name'], _CARDS_IMG_PATH_.$filePicName);
         } else {
@@ -62,29 +61,29 @@ $level = getLevel();
 
 if ($level == 2 || $level == 1) { ?>
 
-<!-- ajout de cntenu -->
-<form method="POST" enctype="multipart/form-data">
-  <h2 class="display-4">Ajouter du contenu</h2>
+  <!-- ajout de cntenu -->
+  <form method="POST" enctype="multipart/form-data">
+    <h2 class="display-4">Ajouter du contenu</h2>
 
-    <div class="mb-3">
-        <label for="title" class="form-label">Titre</label>
-        <input type="text" name="title" id="title" class="form-control">
-    </div>
-
-    <div class="mb-3">
-        <label for="content" class="form-label">Contenu</label>
-        <textarea name="content" id="content" cols="30" rows="5" class="form-control"></textarea>
-    </div>
-
-    <div class="mb-3">
-          <label for="file" class="form-label">Image</label>
-          <input type="file" name="file" id="file">
+      <div class="mb-3">
+          <label for="title" class="form-label">Titre</label>
+          <input type="text" name="title" id="title" class="form-control">
       </div>
-    <input type="submit" value="Enregistrer" name="saveMenu" class="btn btn-primary">
 
-</form>
-  
-<?php
+      <div class="mb-3">
+          <label for="content" class="form-label">Contenu</label>
+          <textarea name="content" id="content" cols="30" rows="5" class="form-control"></textarea>
+      </div>
+
+      <div class="mb-3">
+            <label for="file" class="form-label">Image</label>
+            <input type="file" name="file" id="file">
+        </div>
+      <input type="submit" value="Enregistrer" name="saveMenu" class="btn btn-primary">
+
+  </form>
+    
+  <?php
 } else {
   ?>
     <div class="mb-3">
@@ -95,7 +94,6 @@ if ($level == 2 || $level == 1) { ?>
 }
 ?>
 
-
 <?php
-require_once('templates/footer.php');
+  require_once('templates/footer.php');
 ?>

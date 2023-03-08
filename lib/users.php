@@ -21,4 +21,4 @@ function getUserPassword(PDO $pdo, string $password) {
     return $query->fetch();
 }
 
-
+?>

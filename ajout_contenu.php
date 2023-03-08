@@ -11,12 +11,11 @@ $card = [
     'content' => '',
 ];
 
-
 if (isset($_POST['saveCard'])) {
     $fileName = null;
-    // Si un fichier a été envoyé
+    // if file is send
     if(isset($_FILES['file']['tmp_name']) && $_FILES['file']['tmp_name'] != '') {
-        // return false if file si not image
+        // return false if file is not image
         $checkImage = getimagesize($_FILES['file']['tmp_name']);      
         if ($checkImage !== false) {
             // if the file is an image
@@ -32,19 +31,15 @@ if (isset($_POST['saveCard'])) {
         $res = saveCard($pdo, $_POST['title'], $_POST['description'], $_POST['content'], $fileName);
         
         if ($res) {
-          //$messages[] = 'La carte a bien été sauvegardée';
           ?> 
             <script language="javascript">               
-               alert ('La carte a bien été sauvegardée')
-              //  location.reload();            
+               alert ('La carte a bien été sauvegardée')           
             </script>
           <?php
         } else {
-          //$errors[] = 'La carte n\'a pas été sauvegardée';
           ?> 
             <script language="javascript">               
-               alert ('La carte n\'a pas été sauvegardée')
-              //  location.reload();            
+               alert ('La carte n\'a pas été sauvegardée')          
             </script>
           <?php
         }
@@ -54,7 +49,6 @@ if (isset($_POST['saveCard'])) {
         'description' => $_POST['description'],
         'content' => $_POST['content'],
     ];
-
 }
 
 if (isset($_POST['changeRole'])) {
@@ -93,7 +87,6 @@ if ($level == 1) { ?>
 <br>
 <br>
 
-
 <!-- add content -->
 <form method="POST" enctype="multipart/form-data">
   <h2 class="display-6">Ajouter du contenu</h2>
@@ -128,7 +121,6 @@ if ($level == 1) { ?>
   <?php
 }
 ?>
-
 
 <?php
 require_once('templates/footer.php');

@@ -43,8 +43,8 @@ function saveCard(PDO $pdo, string $title, string $description, string $content,
 }
 
 function changeRole(PDO $pdo, int $role_id, string $username) {
-  echo $role_id;
-  echo $username;
+  // echo $role_id;
+  // echo $username;
   $sql = "UPDATE `users` SET `role_id` = :role_id WHERE `username` = :username" ;
   $query = $pdo->prepare($sql);
   $query->bindParam(':role_id', $role_id, PDO::PARAM_INT);

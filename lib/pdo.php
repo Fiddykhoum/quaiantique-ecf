@@ -16,3 +16,4 @@ $pdo = new PDO('mysql:dbname='.$host['dbName'].';host='.$host['host'].';charset=
 } catch (PDOException $e) {
     echo 'Impossible de se connecter à la base de données';
 }
+?>

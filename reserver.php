@@ -19,26 +19,72 @@
     </div>
   
     <div class="col-lg-6 p-3">
-      <h2 class="display-5  lh-1 mb-3">Réservations</h2>
-        <p class="lead">
-          Cette page est encore en construction. Pour réserver, nous vous invitons à nous contacter au 06 00 00 00 00<br>
-          Merci de votre compréhension.
-        </p>
-      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <a href="cards.php" class="btn btn-primary">Visitez le restaurant</a>
-      </div>
+      <form>  
+        <h1 class="box-title">Reservez votre table</h1>
+        <label>Nom, prénom (ou société)</label>
+        <input type="text" class="box-input" name="username" placeholder="Nom">
+
+        <label>Nombre de personnes</label>
+        <input type="text" class="box-input" name="nbPersonnes" placeholder="Nombre">
+
+        <input id="date" type="date" class="form-control box-input" name="date">
+        
+        <div class="box col-lg-8 p-3 " id="midiDiv"> 
+          <h2 class="box-title">Le midi</h2>
+          <?php 
+            require_once ('./templates/resMidi.php');
+          ?>
+        </div>
+
+        <div class="box col-lg-8 p-3" id="soirDiv">
+          <h2 class="box-title">Le soir</h2>
+          <?php 
+            require_once ('./templates/resSoir.php');
+          ?>
+        </div>
+        
+        <input type="submit" value="Réserver " name="submit" class="mt-2 box-button">
+      </form>
     </div>
   </div>
 </div>
+<!-- <script src="./assets/js/script.js"> -->
+<script>
+    const midiDiv = document.getElementById('midiDiv');
+    const soirDiv = document.getElementById('soirDiv');
 
-<div class="row mt-5">
+    // listen date input
+    const date = document.getElementById("date") 
+    
+    // after select date, show resMidi or resSoir
+    date.addEventListener('input', function() {
 
-  <?php foreach ($cards as $key => $card) { 
-    include('templates/card_partial.php');
-  } ?>
+      // split date delete "-" ==> format  ['2023', '03', '15']
+      var myDate = date.value.split("-");
+      var newDate = new Date( myDate[0], myDate[1] - 1, myDate[2]);
+      $timestamp = newDate.getTime();
+      const day = newDate.getDay($timestamp);
+      console.log(day);
+      if (day === 1) {
+        // montrer que le soir
+        midiDiv.style.display = 'none';
+        soirDiv.style.display = 'block';
+        alert('Ouvert que le soir');
 
-</div>
+      } else if ( day === 0) {
+        //montrer que le matin
+        soirDiv.style.display = 'none';
+        midiDiv.style.display = 'block';
+        alert('Ouvert que le midi');
 
-<?php
+      } else {
+        //Monter les 2
+        console.log('les 2');
+        midiDiv.style.display = 'block';
+        soirDiv.style.display = 'block';
+      }
+    })
+</script>
+<?php 
 require_once('templates/footer.php');
 ?>
