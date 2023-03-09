@@ -1,5 +1,5 @@
-const midiDiv = document.getElementById('midiDiv'); 
-const soirDiv = document.getElementById('soirDiv');
+    const midiDiv = document.getElementById('midiDiv');
+    const soirDiv = document.getElementById('soirDiv');
 
     // listen date input
     const date = document.getElementById("date") 
