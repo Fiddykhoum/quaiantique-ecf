@@ -110,3 +110,17 @@ h2 {
     height: 15vw;
     object-fit: cover;
 }
+/* change format tableau under 620 px */
+@media screen and (max-width: 620px) {
+
+  .tableau {
+    width: 300px;
+  }
+
+  td, th {
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 0.1rem solid var(--primary); 
+  }
+
+}
