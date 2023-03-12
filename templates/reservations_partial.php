@@ -3,12 +3,13 @@ require_once "./lib/tools.php";
 ?>
 
 <h2 class="display-5">Réservations</h2>
-<div class="tableau col-md-6 mt-8">
+<!-- <div class="tableau col-md-6 mt-8"> -->
+<div class="tableau">
   <table>
     <thead>
       <tr>
         <th class="col">Nom</th>
-        <th class="col">Nombre de personnes</th>
+        <th class="col">Nombre</th>
         <th class="col">Heure</th>
       </tr>
     </thead>

@@ -13,17 +13,36 @@
 }
 
 .tableau {
+  border-radius: 15px;
+  border: 0.3rem solid var(--dark);
+  margin-left: 50%;
+  transform: translate(-50%);
+  padding: 30px;
   background-color: #fd7e14;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-td, tr {
-  border: thick double var(--primary);
+th {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+td {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+td, th {
+  border: 0.3rem solid var(--primary);
   text-align: center;
   color: var(--primary);
+
 }
 
 .bg-image {
   background-image: url('../images/Restaurant.jpg');
-  height: 100vh
+  height: 500px;
 }
 
   .btn-primary {

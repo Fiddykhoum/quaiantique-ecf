@@ -9,7 +9,6 @@ body, header {
   width: 200px;
 }
 
-/* ______________login_________________ */
 
 label {
   color: #ff8725;
@@ -28,7 +27,6 @@ h1.box-logo a {
 }
 h1.box-title {
   color: #ff8725;
-  /* background: #ffb17c; */
   font-weight: 300;
   padding: 15px 25px;
   line-height: 30px;
@@ -98,4 +96,20 @@ p.errorMessage {
 .btnleft {
   margin-left: 15px;
   width: 80px;
+}
+.btnAdmin {
+  width: 90px;
+  font-size: 12px;
+}
+.logo {
+  width: 300px;
+}
+
+@media screen and (max-width: 1199px) {
+
+  .logo {
+    width: 200px;
+  }
+  
+
 }

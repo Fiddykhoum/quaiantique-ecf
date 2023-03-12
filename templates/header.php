@@ -24,7 +24,7 @@
   <div class="container">
     <header class="test d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       <a href="index.php" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-        <img src="assets/images/logoquaiAntique.png" alt="Logo Cuisinea" width="300">
+        <img src="assets/images/logoquaiAntique.png" alt="Logo Quai Antique" class="logo" >
       </a>
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav nav-pills">
@@ -47,7 +47,7 @@
           } else {
         ?>
             <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href ='./login.php';">Login</button>
-            <button type="button" class="btn btn-primary" onclick="window.location.href ='./register.php';">Sign-in</button>
+            <button type="button" class="btn btn-primary me-2" onclick="window.location.href ='./register.php';">Sign-in</button>
         <?php
             }
 
@@ -57,14 +57,16 @@
         //show "Adminitrer" button
         if ($level == 1) { 
         ?>
-          <button type="button" class="btn btn-primary" onclick="window.location.href ='./ajout_contenu.php';">Administrer</button>
-          <button type="button" class="btn btn-primary" onclick="window.location.href ='./ajout_menu.php';">Admin menus</button>
-          <button type="button" class="btn btn-primary" onclick="window.location.href ='./reservations.php';">Réservations</button>
+          <div>
+          <button type="button" class="btnAdmin btn btn-primary mt-4" onclick="window.location.href ='./ajout_contenu.php';">Administrer</button>
+          <button type="button" class="btnAdmin btn btn-primary mt-4" onclick="window.location.href ='./ajout_menu.php';">Menus</button>
+          <button type="button" class="btnAdmin btn btn-primary mt-4" onclick="window.location.href ='./reservations.php';">Réservations</button>
+          </div>
         <?php 
         } elseif ($level == 2) { 
         ?>
-          <button type="button" class="btn btn-primary" onclick="window.location.href ='./ajout_menu.php';">Admin menus</button>
-          <button type="button" class="btn btn-primary" onclick="window.location.href ='./reservations.php';">Réservations</button>
+          <button type="button" class="btnAdmin btn btn-primary mt-4" onclick="window.location.href ='./ajout_menu.php';">Admin menus</button>
+          <button type="button" class="btnAdmin btn btn-primary mt-4" onclick="window.location.href ='./reservations.php';">Réservations</button>
         <?php 
         }
         ?>
