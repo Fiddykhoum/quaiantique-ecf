@@ -32,3 +32,32 @@
         soirDiv.style.display = 'block';
       }
     })
+
+
+
+    //___________________PHP Reserver____________________________
+
+if (isset($_POST['submit'])) {
+  if (!$errors) {
+    $res = saveBook($pdo, $_POST['name'], $_POST['nombre'], $_POST['quand']);
+        
+        if ($res) {
+          ?> 
+            <script language="javascript">               
+               alert ('Vorte réservation a été enregistrée')           
+            </script>
+          <?php
+        } else {
+          ?> 
+            <script language="javascript">               
+              alert ('Vorte réservation n\'a pas été enregistrée')          
+            </script>
+          <?php
+        }
+    }
+    $reservation = [
+        'name' => $_POST['name'],
+        'nombre' => $_POST['nombre'],
+        'quand' => $_POST['quand'],
+    ];
+}

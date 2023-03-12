@@ -35,3 +35,16 @@ fiddy / mdp fiddy comme client
 config.php
 pdo.php 
 tools.php
+
+array(10) { 
+    ["id"]=> int(2) [0]=> int(2) 
+    ["name"]=> string(13) "Farid Khoumri" 
+    [1]=> string(13) "Farid Khoumri" 
+    ["nbPersonnes"]=> string(1) "2" 
+    [2]=> string(1) "2" 
+    ["quand"]=> string(10) "2023-03-18"
+    [3]=> string(10) "2023-03-18" 
+    ["heure"]=> string(8) "11:30:00" 
+    [4]=> string(8) "11:30:00" 
+}
+

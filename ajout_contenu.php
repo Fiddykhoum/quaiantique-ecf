@@ -70,13 +70,6 @@ if ($level == 1) { ?>
     <div class="d-flex role">
       <input type="text" name="role_id" id="role_id" class="form-control">
 
-    <?php
-    // d'ou ça vient ça????
-    // if (isset ($_POST['id'] ) && ($_POST['role'] )) {
-    //   echo $_POST['id'];
-    //   echo $_POST['id'];
-    // }
-    ?>
 
     <input class="btn btn-primary btnleft" type="submit" value="Modifier" name="changeRole" class="btn btn-primary">
     </div>
@@ -115,7 +108,7 @@ if ($level == 1) { ?>
 } else {
   ?>
     <div class="mb-3">
-      <p>Seul les administrateurs ont accés à cett page</p>
+      <p>Seul les administrateurs ont accés à cette page</p>
     </div>
     
   <?php

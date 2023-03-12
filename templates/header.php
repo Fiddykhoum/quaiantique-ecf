@@ -51,7 +51,7 @@
         <?php
             }
 
-        //show delete button if admin    
+        //show the "delete" button if admin    
         $level = getLevel();
         
         //show "Adminitrer" button
@@ -59,10 +59,12 @@
         ?>
           <button type="button" class="btn btn-primary" onclick="window.location.href ='./ajout_contenu.php';">Administrer</button>
           <button type="button" class="btn btn-primary" onclick="window.location.href ='./ajout_menu.php';">Admin menus</button>
+          <button type="button" class="btn btn-primary" onclick="window.location.href ='./reservations.php';">Réservations</button>
         <?php 
         } elseif ($level == 2) { 
         ?>
           <button type="button" class="btn btn-primary" onclick="window.location.href ='./ajout_menu.php';">Admin menus</button>
+          <button type="button" class="btn btn-primary" onclick="window.location.href ='./reservations.php';">Réservations</button>
         <?php 
         }
         ?>

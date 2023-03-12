@@ -87,7 +87,7 @@ if ($level == 2 || $level == 1) { ?>
 } else {
   ?>
     <div class="mb-3">
-      <p>Seul les administrateurs ont accés à cett page</p>
+      <p>Seul les administrateurs ont accés à cette page</p>
     </div>
     
   <?php

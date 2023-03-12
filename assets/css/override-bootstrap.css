@@ -12,6 +12,15 @@
     --bs-link-hover-color: var(--light);
 }
 
+.tableau {
+  background-color: #fd7e14;
+}
+td, tr {
+  border: thick double var(--primary);
+  text-align: center;
+  color: var(--primary);
+}
+
 .bg-image {
   background-image: url('../images/Restaurant.jpg');
   height: 100vh
