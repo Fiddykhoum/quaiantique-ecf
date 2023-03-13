@@ -8,7 +8,7 @@ $errors = [];
 if (isset($_POST['submit'])) {
     if (!$errors) {
       $quand = $_POST['bookedDate'];
-      $reservations = getReservations($quand);   
+      $reservations = getReservations($quand);  
     }
   }
     

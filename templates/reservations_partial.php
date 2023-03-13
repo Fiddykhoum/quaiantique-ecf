@@ -2,8 +2,13 @@
 require_once "./lib/tools.php";
 require_once "./lib/tool_date.php";
 
-$date = $_POST['bookedDate'];
-$formatedDate = formatDate($date); 
+if (empty($_POST['bookedDate'])) {
+  echo ('<h2 class="display-5">Veuillez saisir une date valide</h2>');
+  die();
+} else {
+  $date = $_POST['bookedDate'];
+  $formatedDate = formatDate($date); 
+}
 ?>
 
 <h2 class="display-5">Réservations pour le <?php echo( $formatedDate );?></h2> 
