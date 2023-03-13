@@ -66,7 +66,8 @@ function getReservations($quand) {
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 
-  } else {  
 
+  } else {  
+      echo("Vous devez être administrateur");
   }
 }

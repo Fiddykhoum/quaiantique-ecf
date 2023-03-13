@@ -6,12 +6,10 @@ $level = getLevel();
 $errors = [];
 
 if (isset($_POST['submit'])) {
-  if (!$errors) {
-    $quand = $_POST['bookedDate'];
-    echo($quand);
-    $reservations = getReservations($quand);
-    //return $quand;
-  }
+    if (!$errors) {
+      $quand = $_POST['bookedDate'];
+      $reservations = getReservations($quand);   
+    }
   }
     
 if ($level == 2 || $level == 1) {   
