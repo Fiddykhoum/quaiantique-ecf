@@ -55,8 +55,8 @@ if (isset($_POST['submit'])) {
         }
     }
   $reservation = [
-      'name' => $_POST['name'],
-      'nbPersonnes' => $_POST['nbPersonnes'],
+      'name' => htmlspecialchars($_POST['name']),
+      'nbPersonnes' => htmlspecialchars($_POST['nbPersonnes']),
       'quand' => $_POST['quand'],
   ];
 };

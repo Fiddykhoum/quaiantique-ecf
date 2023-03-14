@@ -24,8 +24,8 @@ if (empty($_POST['bookedDate'])) {
     <tbody>
   <?php foreach ($reservations as $reservation) { ?>
       <tr>
-        <td class="col"><?php echo($reservation['name']); ?></td>
-        <td class="col"><?php echo($reservation['nbPersonnes']); ?></td>
+        <td class="col"><?php echo(htmlspecialchars($reservation['name'])); ?></td>
+        <td class="col"><?php echo(htmlspecialchars($reservation['nbPersonnes'])); ?></td>
         <td class="col"><?php echo($reservation['heure']); ?></td>
       </tr>
       <?php } ?>
