@@ -1,5 +1,5 @@
 <?php 
-require_once "./lib/tools.php";
+//require_once "./lib/tools.php";
 require_once "./lib/tool_date.php";
 
 if (empty($_POST['bookedDate'])) {

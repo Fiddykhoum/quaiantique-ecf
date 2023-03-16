@@ -34,9 +34,8 @@ if ($level == 2 || $level == 1) {
 } else {
   ?>
     <div class="mb-3">
-      <p>Seul les administrateurs ont accés à cette page</p>
+      <p style="font-size: 2rem;">Seuls les administrateurs ont accès à cette page</p>
     </div>
-    
   <?php
 }
 ?>

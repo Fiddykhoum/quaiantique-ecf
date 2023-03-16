@@ -1,20 +1,10 @@
 <?php
 require_once('templates/header.php');
-require_once('lib/tools.php');
+//require_once('lib/tools.php');
 require_once('lib/card.php');
 
 $id = (int)$_GET['id'];
-//voir si utile
 $card = getCardById($pdo, $id);
-
-// linesToArray va transformer un exte en array selon un explode. 
-// changer ingredients par content ??? je crois, faire ça plutÔt dans carte_menu.phph, à vérifier
-//if ($card) {
-  // cette fonction est dans lib/tools.php
-    //$content = linesToArray($card['content']);
-   
-    
-
 
 if ($card) {
 

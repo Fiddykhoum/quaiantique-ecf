@@ -11,7 +11,7 @@ require_once "./lib/tools.php"
     <div class="card-body">
       <h5 class="card-title"><?= $card['title']; ?></h5>
       <p class="card-text"><?= $card['description']; ?></p>
-      <a href="carte.php?id=<?=$card['id']; ?>" class="btn btn-primary">Détails</a>
+      <a href="carte.php?id=<?=$card['id']; ?>"class="btn btn-primary">Détails</a>
       <?php
       
         $level = getLevel();
@@ -26,7 +26,6 @@ require_once "./lib/tools.php"
                  alert ("la carte a été supprimée")
                  location.reload();            
               </script>
-
           <?php
            
            } ?>

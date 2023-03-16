@@ -35,14 +35,16 @@
         <?php } ?>
       </ul>
 
-      <div class="col-md-3 text-end"> 
+      <div class="col-lg-3 text-end"> 
 
         <?php
 
         if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
         ?>
-            <p>Bonjour <?php echo ($_SESSION['username']) ?></p>
-            <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href ='./logout.php';">Logout</button>
+          <div class="d-inline" >
+            <p class="d-inline">Bonjour <?php echo ($_SESSION['username']) ?></p>
+            <button type="button" class="d-inline btn btn-outline-primary me-2" onclick="window.location.href ='./logout.php';">Logout</button>
+          </div>
         <?php
           } else {
         ?>
@@ -58,9 +60,9 @@
         if ($level == 1) { 
         ?>
           <div>
-          <button type="button" class="btnAdmin btn btn-primary mt-4" onclick="window.location.href ='./ajout_contenu.php';">Administrer</button>
-          <button type="button" class="btnAdmin btn btn-primary mt-4" onclick="window.location.href ='./ajout_menu.php';">Menus</button>
-          <button type="button" class="btnAdmin btn btn-primary mt-4" onclick="window.location.href ='./reservations.php';">Réservations</button>
+            <button type="button" class="btnAdmin btn btn-primary mt-4" onclick="window.location.href ='./ajout_contenu.php';">Administrer</button>
+            <button type="button" class="btnAdmin btn btn-primary mt-4" onclick="window.location.href ='./ajout_menu.php';">Menus</button>
+            <button type="button" class="btnAdmin btn btn-primary mt-4" onclick="window.location.href ='./reservations.php';">Réservations</button>
           </div>
         <?php 
         } elseif ($level == 2) { 

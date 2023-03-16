@@ -1,5 +1,6 @@
 <?php
 require_once ('config.php');
+
 //converti les text en array séparé par sauts de lignes PHP_EOL
 function linesToArray(string $string) {
     return explode(PHP_EOL, $string);
@@ -13,7 +14,6 @@ function getLevel() {
     //ok works with const
     $pdo = new PDO('mysql:dbname='.$host['dbName'].';host='.$host['host'].';charset=utf8mb4',''.$host['username'].'', ''.$host['password'].'');
    
-
     //return connected  username
     $userConnected = $_SESSION['username'];
 
@@ -68,6 +68,7 @@ function getReservations($quand) {
 
 
   } else {  
-      echo("Vous devez être administrateur");
+      //echo(<"Vous devez être administrateur");
+      return ;
   }
 }

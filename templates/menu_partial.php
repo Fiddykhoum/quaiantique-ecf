@@ -13,7 +13,6 @@ require_once "./lib/tools.php"
       <p class="card-text"><?= $menu['content']; ?></p>
       <a href="carte_menu.php?id=<?=$menu['id']; ?>" class="btn btn-primary">Détails</a>
       <?php
-
       
         $level = getLevel();
         if ($level == 1) {     
@@ -29,7 +28,6 @@ require_once "./lib/tools.php"
                 location.reload();            
               </script>
             <?php
-
 
            } ?>
           <form method="post">

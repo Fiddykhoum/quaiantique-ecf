@@ -1,4 +1,5 @@
 <?php
+
 require_once('templates/header.php');
 require_once('lib/tools.php');
 require_once('lib/menu.php');
@@ -53,9 +54,9 @@ if (isset($_POST['saveMenu'])) {
 
 }
 
-if (isset($_POST['changeRole'])) {
-  $res = changeRole($pdo, (int)$_POST['role_id'], (string)$_POST['username']);
-}
+// if (isset($_POST['changeRole'])) {
+//   $res = changeRole($pdo, (int)$_POST['role_id'], (string)$_POST['username']);
+// }
 
 $level = getLevel();
 
@@ -63,7 +64,7 @@ if ($level == 2 || $level == 1) { ?>
 
   <!-- ajout de cntenu -->
   <form method="POST" enctype="multipart/form-data">
-    <h2 class="display-4">Ajouter du contenu</h2>
+    <h2 class="display-4">Ajouter carte ou menu</h2>
 
       <div class="mb-3">
           <label for="title" class="form-label">Titre</label>
@@ -76,7 +77,7 @@ if ($level == 2 || $level == 1) { ?>
       </div>
 
       <div class="mb-3">
-            <label for="file" class="form-label">Image</label>
+            <label for="file" class="form-label">Uploadez une image : </label>
             <input type="file" name="file" id="file">
         </div>
       <input type="submit" value="Enregistrer" name="saveMenu" class="btn btn-primary">

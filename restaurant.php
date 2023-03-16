@@ -1,7 +1,7 @@
 <?php
   require_once('templates/header.php');
   require_once('lib/card.php');
-  require_once('lib/pdo.php');
+  //require_once('lib/pdo.php');
 
   $cards = getCards($pdo);
 
