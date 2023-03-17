@@ -1,6 +1,7 @@
 <?php
   require_once('templates/header.php');
   require_once('lib/book.php');
+  require_once('lib/tool_date.php');
   //require_once('lib/pdo.php');
 
 $errors = [];
@@ -41,11 +42,16 @@ if (isset($_POST['submit'])) {
   if (!$errors) {
     $res = saveBook($pdo, $_POST['name'], $_POST['nbPersonnes'], $_POST['quand'], $_POST['heure']);      
         if ($res) {
-          ?> 
-            <script language="javascript">               
-                alert ('Vorte réservation a été enregistrée')           
-            </script>
-          <?php
+
+            $date = $_POST['quand'];
+            $formatedDate = formatDate($date); 
+
+            $message='Vorte réservation a été enregistrée pour le '
+            .$formatedDate.' à '
+            .$_POST['heure'].' pour '
+            .$_POST['nbPersonnes'].' personnes.';
+            echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
+
         } else {
           ?> 
             <script language="javascript">               
