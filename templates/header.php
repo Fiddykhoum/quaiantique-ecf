@@ -67,7 +67,8 @@
         <?php 
         } elseif ($level == 2) { 
         ?>
-          <button type="button" class="btnAdmin btn btn-primary mt-4" onclick="window.location.href ='./ajout_menu.php';">Admin menus</button>
+          <br>
+          <button type="button" class="btnAdmin btn btn-primary mt-4" onclick="window.location.href ='./ajout_menu.php';">Menus</button>
           <button type="button" class="btnAdmin btn btn-primary mt-4" onclick="window.location.href ='./reservations.php';">Réservations</button>
         <?php 
         }

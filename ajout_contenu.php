@@ -69,14 +69,12 @@ if ($level == 1) { ?>
       <label for="role_id" class="form-label">Role</label>
     <div class="d-flex role">
       <input type="text" name="role_id" id="role_id" class="form-control">
-
-
+      
     <input class="btn btn-primary btnleft" type="submit" value="Modifier" name="changeRole" class="btn btn-primary">
     </div>
       <p >1 pour administrateur - 2 pour Chef/Directeur - 3 pour client</p>
     </div>
 </form>
-
 <br>
 <br>
 
@@ -97,18 +95,17 @@ if ($level == 1) { ?>
     </div>
     
     <div class="mb-3">
-          <label for="file" class="form-label">Image</label>
-          <input type="file" name="file" id="file">
-      </div>
+        <label for="file" class="form-label">Image</label>
+        <input type="file" name="file" id="file">
+    </div>
     <input type="submit" value="Enregistrer" name="saveCard" class="btn btn-primary">
-
 </form>
   
 <?php
 } else {
   ?>
     <div class="mb-3">
-      <p>Seul les administrateurs ont accés à cette page</p>
+      <p>Seul les administrateurs ont accès à cette page</p>
     </div>
     
   <?php

@@ -2,10 +2,10 @@
   require_once('templates/header.php');
   require_once('lib/book.php');
   require_once('lib/tool_date.php');
-  //require_once('lib/pdo.php');
 
+  //$messages = []; //not used
+  
 $errors = [];
-$messages = [];
 $reservation = [
     'name' => '',
     'nbPersonnes' => '',

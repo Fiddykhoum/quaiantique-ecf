@@ -15,8 +15,7 @@ if (isset($_POST['submit'])) {
 if ($level == 2 || $level == 1) {   
   
   ?>
-  <!-- day choice -->
-  <div> 
+  <!-- day choice --> 
   <form method="POST" enctype="multipart/form-data">
     <h2 class="display-4">Choisir le jour</h2>
     <input id="bookedDate" type="date" class="form-control box-input" name="bookedDate">

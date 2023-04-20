@@ -1,6 +1,6 @@
 <?php
 
- require_once('lib/pdo.php');
+require_once('lib/pdo.php');
 
 //const path pix for cards
 define('_CARDS_IMG_PATH_', 'uploads/cards/');
@@ -11,7 +11,6 @@ define('_ASSETS_IMG_PATH_', 'assets/images/');
 //const define number of cards in index.php
 define('_HOME_CARDS_LIMIT_', 3);
 
-
 // header's nav bar
 $mainMenu = [
   'index.php' => 'Accueil', 
@@ -20,8 +19,10 @@ $mainMenu = [
   'reserver.php' => 'Réserver',    
 ];
 
-//--------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
 // Change host's param here
+
+//local host
 function host() {
   $hostChange = [
       'host' => '127.0.0.1',
@@ -41,7 +42,7 @@ function host() {
 //     ];   
 //   return $hostChange;
 // }
-//--------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
 
 // server params call function host()
 $host = host();
@@ -50,17 +51,9 @@ $host = host();
   define('DB_PASSWORD',''. $host['password'].'');
   define('DB_NAME',''. $host['dbName'].'');
   
-  // database connexion
-  $conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+// database connexion
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
-
-//database informations version en dure
-// define('DB_SERVER', '127.0.0.1');
-// define('DB_USERNAME', 'root');
-// define('DB_PASSWORD', '');
-// define('DB_NAME', 'studi_live_cuisinea');
-
- 
 // try if connexion is ok
 if($conn === false){
     die("ERREUR : Impossible de se connecter. " . mysqli_connect_error());

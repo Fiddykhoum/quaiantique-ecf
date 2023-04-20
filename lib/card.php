@@ -26,6 +26,8 @@ function getCards(PDO $pdo, int $limit = null) {
 
     if ($limit) {
         $query->bindParam(':limit', $limit, PDO::PARAM_INT);
+        //echo  $sql;// ==> SELECT * FROM cards ORDER BY id DESC LIMIT :limit
+        //var_dump($query); //==> "SELECT * FROM cards ORDER BY id DESC LIMIT :limit"
     }
 
     $query->execute();
@@ -41,12 +43,20 @@ function saveCard(PDO $pdo, string $title, string $description, string $content,
     $query->bindParam(':image', $image, PDO::PARAM_STR);
     return $query->execute();
 }
-
+ 
 function changeRole(PDO $pdo, int $role_id, string $username) {
-  $sql = "UPDATE `users` SET `role_id` = :role_id WHERE `username` = :username" ;
-  $query = $pdo->prepare($sql);
-  $query->bindParam(':role_id', $role_id, PDO::PARAM_INT);
-  $query->bindParam(':username', $username, PDO::PARAM_STR);
-  return $query->execute();
+  if ($role_id === 1 || $role_id === 2 || $role_id === 3) {
+    $sql = "UPDATE `users` SET `role_id` = :role_id WHERE `username` = :username" ;
+    $query = $pdo->prepare($sql);
+    $query->bindParam(':role_id', $role_id, PDO::PARAM_INT);
+    $query->bindParam(':username', $username, PDO::PARAM_STR);
+    return $query->execute();
+} else {
+  ?>
+    <script language="javascript">               
+      alert ('Le rôle que vous voulez attribuer n\'existe pas')          
+    </script>
+  <?php
+  }
 }
 ?>

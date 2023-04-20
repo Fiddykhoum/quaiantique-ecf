@@ -1,7 +1,6 @@
 <?php
   require_once('templates/header.php');
   require_once('lib/card.php');
-  //require_once('lib/pdo.php');
 
   $cards = getCards($pdo);
 
@@ -10,11 +9,9 @@
       <h1>Galerie photo</h1>
   </div>
   <div class="row">
-
     <?php foreach ($cards as $key => $card) {
-      include('templates/card_partial.php');
-    }
-
+        include('templates/card_partial.php');
+      }
     ?>
   </div>
 

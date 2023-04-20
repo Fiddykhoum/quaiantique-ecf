@@ -1,16 +1,25 @@
 ﻿
 <?php
 require_once('templates/header.php');
-//require('./lib/config.php');
 
 if (isset($_REQUEST['username'], $_REQUEST['email'], $_REQUEST['password'])){
-	// récupérer le nom d'utilisateur et supprimer les antislashes ajoutés par le formulaire
+
+// demarrer ici la condition de verif si le username existe
+// $usernameTest = $_POST['username'];  //fid
+// $usernameTest = $_REQUEST['username'];
+// $stmt = $pdo->prepare("SELECT * FROM users WHERE username=?");
+// $stmt->execute([$usernameTest]); 
+// $user = $stmt->fetch();
+// if ($user) {
+
+//  } else {
+
 	$username = stripslashes($_REQUEST['username']);
 	$username = mysqli_real_escape_string($conn, $username); 
-	// récupérer l'email et supprimer les antislashes ajoutés par le formulaire
+	
 	$email = stripslashes($_REQUEST['email']);
 	$email = mysqli_real_escape_string($conn, $email);
-	// récupérer le mot de passe et supprimer les antislashes ajoutés par le formulaire
+
 	$password = stripslashes($_REQUEST['password']);
 	$password = mysqli_real_escape_string($conn, $password);
   $defaultRole_id = 3;
@@ -18,6 +27,8 @@ if (isset($_REQUEST['username'], $_REQUEST['email'], $_REQUEST['password'])){
 	$query = "INSERT into `users` (username, email, role_id, password)
 				VALUES ('$username', '$email',  $defaultRole_id, '".hash('sha256', $password)."')";
 	$res = mysqli_query($conn, $query);
+  //  }
+  // fin du code si username existe
 
     if($res){
        echo "<div class='sucess'>
@@ -30,7 +41,7 @@ if (isset($_REQUEST['username'], $_REQUEST['email'], $_REQUEST['password'])){
 <form class="box" action="" method="post">
 <a href="./index.php"> 
 <img src="./assets/images/logoquaiAntique.png" alt="Logo Quai Antique" width="300">
-</a>
+</a>              
     <h1 class="box-title">S'inscrire</h1>
 	<input type="text" class="box-input" name="username" placeholder="Nom d'utilisateur" required />
     <input type="text" class="box-input" name="email" placeholder="Email" required />

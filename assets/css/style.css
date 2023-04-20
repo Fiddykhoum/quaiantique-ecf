@@ -1,7 +1,67 @@
+.carouselContent {
+  padding-left: 15px;
+  width: 100%;
+  position: absolute; 
+  background-color: hsla(27, 100%, 7%, 0.75);
+}
+
 body, header {
   background-color: #392C1E;
   font-family: Arial, Helvetica, sans-serif;
 } 
+.fTitleSize {
+  font-size: 18px;
+  }
+  .fSize {
+    font-size: 12px;
+    }
+.carBtn {
+  width: 150px;
+  font-size: 10px;
+}
+
+/* carousel */
+#carouselExampleControls {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin-bottom: 20px;
+  overflow: auto;
+}
+
+.carousel-item img {
+  width: 100%;
+  border: 0.4rem solid hsla(27, 100%, 57%, .55);
+  border-radius: 15px;
+}
+@media screen and (min-width: 768px) {
+
+  #carouselExampleControls {
+    width: 90%;
+    border: 0.4rem solid hsla(27, 100%, 57%, .55);
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    border:inherit;
+    border-radius: inherit;
+  }
+  .fTitleSize {
+    font-size: 36px;
+  }
+  .fSize {
+    font-size: 18px;
+  }
+  .carBtn {
+    width: auto;
+    font-size: 12px;
+  }
+}
+/* Fin  carousel */
+
+
 .content {
   background-color: hsla(50, 33%, 25%, .75);
 }
@@ -48,7 +108,6 @@ h1.box-title {
   border: 0;
   outline:0;
 }
-
 
 
 .box-register

@@ -1,17 +1,16 @@
 <?php
 require_once ('config.php');
+require_once('./Class/Cart.php');
 
-//converti les text en array séparé par sauts de lignes PHP_EOL
+//convert text in array separate by PHP_EOL
 function linesToArray(string $string) {
     return explode(PHP_EOL, $string);
 }
 
 function getLevel() {
-
   if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
     
     $host = host();
-    //ok works with const
     $pdo = new PDO('mysql:dbname='.$host['dbName'].';host='.$host['host'].';charset=utf8mb4',''.$host['username'].'', ''.$host['password'].'');
    
     //return connected  username
@@ -26,8 +25,7 @@ function getLevel() {
     return $result['slug'];
 
   } else {
-    //echo 'user non connecté';
-    //return '';
+    return 'user non connecté';;
   }
 
 }
@@ -66,9 +64,27 @@ function getReservations($quand) {
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 
-
   } else {  
       //echo(<"Vous devez être administrateur");
       return ;
   }
+}
+
+function addFlamm($productName, $qtyFlamm, $price) {
+  $cartFlamm = new Cart($productName, $qtyFlamm, $price);
+  $quantity = $cartFlamm->getQuantity();
+  return ('<div>'.$quantity.'</div>');
+}
+
+function addPizza($productName, $qtyPizza, $price) {
+ $qty = $qtyPizza;
+  $cartPizza = new Cart($productName, $qtyPizza, $price);
+  $quantity = $cartPizza->getQuantity();
+  return $quantity;
+}
+
+function addTarte($productName, $qtyTarte, $price) {
+  $cartTarte = new Cart($productName, $qtyTarte, $price);
+  $quantity = $cartTarte->getQuantity();
+  return $quantity;
 }
