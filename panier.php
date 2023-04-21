@@ -25,7 +25,7 @@ require_once('./templates/header.php');
             
           ?> 
             <script language="javascript">               
-              alert ("la carte a été supprimée")
+              alert ("Cet article a été supprimée")
               location.reload();            
             </script>
           <?php
