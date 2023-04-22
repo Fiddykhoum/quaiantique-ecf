@@ -17,6 +17,7 @@ $mainMenu = [
   'restaurant.php' => 'Le restaurant',
   'menus.php' => 'Menu et carte',
   'reserver.php' => 'Réserver',    
+  'shop.php' => 'Shop',
 ];
 
 //--------------------------------------------------------------------------------------
