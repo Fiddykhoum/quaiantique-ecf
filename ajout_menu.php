@@ -60,7 +60,7 @@ if (isset($_POST['saveMenu'])) {
 
 $level = getLevel();
 
-if ($level == 2 || $level == 1) { ?>
+if ($level === 2 || $level === 1) { ?>
 
   <!-- ajout de cntenu -->
   <form method="POST" enctype="multipart/form-data">

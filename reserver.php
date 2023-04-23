@@ -69,7 +69,7 @@ if (isset($_POST['submit'])) {
 ?>
 
 <div class="bg-image h-auto">
-  <div class="row flex-lg-row  justify-content-center align-items-center g-1 py-5 content">  
+  <div class="row flex-lg-row justify-content-center align-items-center g-1 py-5 content">  
     <div class="col-lg-6 p-3">
         <form method="POST" enctype="multipart/form-data">  
           <h1 class="box-title">Reservez votre table</h1>

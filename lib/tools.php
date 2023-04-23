@@ -22,7 +22,7 @@ function getLevel() {
     $result = $query->fetch();
     
     //return user's slug
-    return $result['slug'];
+    return (int) $result['slug'];
 
   } else {
     return 'user non connecté';;
@@ -87,4 +87,15 @@ function addTarte($productName, $qtyTarte, $price) {
   $cartTarte = new Cart($productName, $qtyTarte, $price);
   $quantity = $cartTarte->getQuantity();
   return $quantity;
+}
+
+function ifUserExist($userTry){
+  $host = host();
+  $pdo = new PDO('mysql:dbname='.$host['dbName'].';host='.$host['host'].';charset=utf8mb4',''.$host['username'].'', ''.$host['password'].'');
+  
+  $myquery = "SELECT COUNT(*) FROM users WHERE  username = '" . $userTry ."';";
+    $query = $pdo->query($myquery);
+    $result = $query->fetchAll(PDO::FETCH_NUM);
+    $result=$result[0][0];
+    return $result;
 }

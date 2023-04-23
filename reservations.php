@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
     }
   }
     
-if ($level == 2 || $level == 1) {   
+if ($level === 2 || $level === 1) {   
   
   ?>
   <!-- day choice --> 

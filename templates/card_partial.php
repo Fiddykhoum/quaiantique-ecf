@@ -15,7 +15,7 @@ require_once "./lib/tools.php"
       <?php
       
         $level = getLevel();
-        if ($level == 1) {                    
+        if ($level === 1) {                    
           if(isset($_POST[$card['id']])) {
             
             $delquery = " DELETE FROM cards WHERE cards.id = " . $card['id'] .";";

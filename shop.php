@@ -55,12 +55,16 @@
       $message='Vous avez ajouté '.$_POST['qtyTarte'].' fonds à votre panier';
       echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
     }
-  } else {
-    echo('vous devez être connecté pur commander nos produit. L\'inscription est gratuite');
   }
+  // } else {
+  //   echo('vous devez être connecté pur commander nos produit. L\'inscription est gratuite');
+  // }
      
-  ?>
+ 
+$level = getLevel();
 
+if ($level === 1 || $level === 2 || $level === 3) { 
+?>
 <div class="d-flex justify-content-between">
     <h1>Shop</h1>
     <a href="panier.php"><img src="assets/images/cart.png" style=width:50px;></a>
@@ -114,7 +118,15 @@
     </div>
   </div>
 </div> 
-
+<?php
+} else {
+?>
+<div class="alert alert-danger text-center fs-5">
+  Vous devez être connecté pour acceder au Shop, L'inscription est gratuite et ne vous prendra que cinq minutes
+</div>
+<?php
+}
+?>
 <?php
   require_once('templates/footer.php');
 ?>

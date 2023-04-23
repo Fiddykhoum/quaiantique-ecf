@@ -57,7 +57,7 @@
         $level = getLevel();
         
         //show "Adminitrer" button
-        if ($level == 1) { 
+        if ($level === 1) { 
         ?>
           <div>
             <button type="button" class="btnAdmin btn btn-primary mt-4" onclick="window.location.href ='./ajout_contenu.php';">Administrer</button>

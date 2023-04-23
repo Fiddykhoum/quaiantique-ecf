@@ -26,8 +26,6 @@ function getCards(PDO $pdo, int $limit = null) {
 
     if ($limit) {
         $query->bindParam(':limit', $limit, PDO::PARAM_INT);
-        //echo  $sql;// ==> SELECT * FROM cards ORDER BY id DESC LIMIT :limit
-        //var_dump($query); //==> "SELECT * FROM cards ORDER BY id DESC LIMIT :limit"
     }
 
     $query->execute();
