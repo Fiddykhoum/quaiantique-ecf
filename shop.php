@@ -55,11 +55,7 @@
       $message='Vous avez ajouté '.$_POST['qtyTarte'].' fonds à votre panier';
       echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
     }
-  }
-  // } else {
-  //   echo('vous devez être connecté pur commander nos produit. L\'inscription est gratuite');
-  // }
-     
+  }  
  
 $level = getLevel();
 
