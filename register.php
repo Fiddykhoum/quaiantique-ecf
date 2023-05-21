@@ -43,16 +43,21 @@ if (isset($_REQUEST['username'], $_REQUEST['email'], $_REQUEST['password'])){
               <?php
             }else{
             
-            $query = "INSERT into `users` (username, email, role_id, password)
-                VALUES ('$username', '$email',  $defaultRole_id, '".hash('sha256', $password)."')";
-            $res = mysqli_query($conn, $query);
-                if($res){
-                  echo "<div class='sucess'>
-                        <h3>Vous êtes inscrit avec succès.</h3>
-                        <p>Cliquez ici pour vous <a href='./login.php'>connecter</a></p>
-                  </div>";
-                }
+            $sql = "INSERT into `users` (username, email, role_id, password)
+            VALUES (:username, :email,  :defaultRole_id, '".hash('sha256', $password)."')"; 
+            $query = $pdo->prepare($sql);
+            $query->bindParam(':username', $username, PDO::PARAM_STR);
+            $query->bindParam(':email', $email, PDO::PARAM_STR);
+            $query->bindParam(':defaultRole_id', $defaultRole_id, PDO::PARAM_INT);
+            $query->execute();
+
+            if($sql){
+              echo "<div class='sucess'>
+                    <h3>Vous êtes inscrit avec succès.</h3>
+                    <p>Cliquez ici pour vous <a href='./login.php'>connecter</a></p>
+              </div>";
             }
+          }
         }
     }
 }
